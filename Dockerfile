@@ -1,6 +1,6 @@
-FROM node
-WORKDIR /app
-ADD . /app
-RUN npm install
-EXPOSE 3000
-CMD npm start
+FROM node:alpine
+WORKDIR /usr/src/app
+COPY package*.json .
+RUN npm ci
+COPY . .
+CMD ["npm", "start"]
