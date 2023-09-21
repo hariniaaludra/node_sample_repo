@@ -54,14 +54,13 @@ Order.belongsToMany(Product,{through:OrderItem});
 
 
 sequelize
-  //.sync({ force: true })
   .sync()
   .then(result => {
     // console.log('Result of sync====> ', result);
     return User.findByPk(1);
   })
   .then(user => {
-    if (!user) {
+    if (!user) { 
       return User.create({ name: 'Hari', email_id: 'hari@gmail.com' });
     }
     return user;
@@ -70,7 +69,7 @@ sequelize
     return user.createCart();
   })
   .then(cart => {
-    app.listen(3000);
+    app.listen(8000);
   })
   .catch(err => {
     console.log('Error while sync ===>>  ', err);
