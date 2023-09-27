@@ -21,7 +21,7 @@ services:
   nodeapp:
     container_name: nodeappcontainer
     build: .
-    image: nodeapp:v1
+    image: nodeapp:${BUILD_NUMBER}
     volumes:
       - $HOME/nodeapp:/code
     ports:
