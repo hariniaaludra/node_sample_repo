@@ -17,7 +17,8 @@ const Products = sequelize.define('products', {
   img_url: {
     type: Sequelize.STRING,
     allowNull: false
-  }
+  },
+  price:Sequelize.DOUBLE
 });
 
 module.exports=Products;
